@@ -1,0 +1,19 @@
+
+introdução: 
+O Instituto Federal de Educação, Ciência e Tecnologia do Rio Grande do Norte (IFRN) desempenha um papel fundamental no desenvolvimento de atividades de ensino, pesquisa e extensão, focando na permanência estudantil através de auxílios financeiros e bolsas. Atualmente, o gerenciamento desses bolsistas é regido pelo Decreto nº 7.416/2010 e pela Resolução nº 34/2017-CONSUP, sendo o fluxo oficial de gestão centralizado no Sistema Unificado de Administração Pública (SUAP). No entanto, a coleta de dados de assiduidade ainda depende significativamente de registros analógicos e folhas de ponto físicas, o que gera o chamado "atrito de dados". Esse método tradicional é vulnerável a extravios, danos físicos e falhas operacionais que dificultam a validação tempestiva da frequência, resultando em atrasos no pagamento das bolsas e comprometendo a manutenção financeira dos discentes.
+A transição para um Sistema de Informação (SI) automatizado mostra-se imprescindível, pois, conforme destacam Laudon e Laudon (2004), tais sistemas apoiam a tomada de decisões, a coordenação e o controle organizacional. Ao dominar o processo de coletar e transformar dados brutos em informações precisas, a instituição reduz incertezas e aumenta a probabilidade de êxito em suas atividades gerenciais. Diante deste cenário, este trabalho delimita-se ao desenvolvimento de uma aplicação voltada para a modernização desse controle, utilizando tecnologias de informação e comunicação (TIC) para romper barreiras de tempo e espaço no fluxo informacional.
+
+
+Objetivo Geral:
+Implementar uma solução tecnológica (web ou mobile) para a automação do gerenciamento de frequência e das atividades pedagógicas dos bolsistas do IFRN, com o propósito de reduzir o atrito de dados gerado por registros analógicos e otimizar a transparência e integridade institucional.
+Objetivos específicos
+Modernizar a coleta de dados de assiduidade, substituindo folhas de ponto físicas por registros eletrônicos via QR Code ou Geofencing (coordenadas geográficas), garantindo a presença do bolsista no local de trabalho.
+Estabelecer a integração técnica via API com o sistema SUAP, permitindo a sincronização automática dos registros e eliminando o retrabalho manual de digitação por parte dos orientadores.
+Fornecer ferramentas de monitoramento em tempo real através de dashboards para coordenadores, facilitando o cumprimento da carga horária de 15 horas semanais e os prazos de pagamento.
+Garantir a rastreabilidade e segurança dos dados através de mecanismos como logs de sistema e timestamps, fornecendo trilhas de auditoria seguras para os órgãos de controle.
+
+Justificativa
+
+A gestão da frequência de bolsistas no IFRN permanece fundamentada em registros analógicos e folhas de ponto físicas, o que configura um modelo de monitoramento manual e obsoleto. De acordo com Viana Junior (2019), a utilização de tais processos físicos demanda um elevado volume documental e predispõe o gerenciamento a variados erros operacionais e humanos. Essa dependência de métodos desatualizados gera o chamado "atrito de dados", o que compromete a integridade das informações e dificulta a validação tempestiva da assiduidade, resultando em possíveis atrasos de pagamentos e retrabalhos por parte dos responsáveis pela gestão.
+A transição para um Sistema de Informação (SI) automatizado é essencial, pois, como aponta Anjos Neto (2017), dominar o processo de coletar e transformar dados em informações é imprescindível para reduzir incertezas e aumentar a probabilidade de êxito nas atividades organizacionais.
+Além disso, a implementação alinha-se à visão de Pereira (2023), que destaca a necessidade de sistemas centralizados para superar as limitações da gestão manual e viabilizar o acompanhamento eficiente das atividades. Do ponto de vista estratégico, Pinto, Molina e Palet
