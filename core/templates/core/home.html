@@ -1,0 +1,37 @@
+{% extends "core/base.html" %}
+
+{% block title %}Home | TCC IFRN{% endblock %}
+
+{% block content %}
+<div class="hero">
+  <span class="badge">TCC IFRN</span>
+  <div>
+    <h2>Gestão eletrônica de frequência de bolsistas</h2>
+    <p>Este site apresenta uma solução para modernizar o controle de frequência do IFRN, eliminando o uso de folhas de ponto físicas e trazendo mais integridade às informações.</p>
+  </div>
+  <div class="actions">
+    <a href="/bolsista/frequencia/" class="button">Ver frequência do bolsista</a>
+  </div>
+</div>
+
+<div class="grid grid-2" style="margin-top: 24px;">
+  <div class="card">
+    <h3>Por que automatizar?</h3>
+    <ul>
+      <li>Redução de erros e extração automática de dados.</li>
+      <li>Registro seguro e rastreável com timestamps.</li>
+      <li>Visualização clara da carga horária e atividades.</li>
+      <li>Integração com SUAP para sincronização automática.</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h3>Recursos planejados</h3>
+    <ul>
+      <li>Login seguro para bolsistas e coordenadores.</li>
+      <li>Registro de presença por QR Code e geolocalização.</li>
+      <li>Dashboard em tempo real para acompanhamento.</li>
+      <li>Logs e trilhas de auditoria para conformidade.</li>
+    </ul>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,92 @@
+{% extends "core/base.html" %}
+
+{% block title %}Frequência do Bolsista | TCC IFRN{% endblock %}
+
+{% block content %}
+<div class="hero">
+  <div>
+    <span class="badge">Tela de frequência</span>
+    <h2>Controle de ponto do bolsista</h2>
+    <p>Visualize o histórico de registros, acompanhe a carga horária e faça a gestão de presença por QR Code ou geolocalização.</p>
+  </div>
+  <div class="actions">
+    <a href="#" class="button">Registrar com QR Code</a>
+    <a href="#" class="button">Registrar com Geolocalização</a>
+  </div>
+</div>
+
+<div class="grid grid-3" style="margin-top: 24px;">
+  <div class="card">
+    <h3>Dados do bolsista</h3>
+    <p><strong>{{ bolsista.nome }}</strong></p>
+    <p class="info-line">Curso: {{ bolsista.curso }}</p>
+    <p class="info-line">Programa: {{ bolsista.programa }}</p>
+    <p class="info-line">Supervisor: {{ bolsista.supervisor }}</p>
+    <p class="info-line">Email: {{ bolsista.email }}</p>
+  </div>
+
+  <div class="card">
+    <h3>Resumo de frequência</h3>
+    <ul class="summary-list">
+      <li class="summary-item"><strong>{{ frequencia.presente }}</strong> Horas registradas</li>
+      <li class="summary-item"><strong>{{ frequencia.faltas }}</strong> Horas faltantes</li>
+      <li class="summary-item"><strong>{{ frequencia.carga_horaria }}</strong> Horas semanais previstas</li>
+      <li class="summary-item"><strong>{{ frequencia.registros }}</strong> Registros realizados</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>Progresso</h3>
+    <p style="margin:0 0 12px;">Semana atual</p>
+    <div class="summary-item"><strong>{{ frequencia.percentual }}%</strong> da carga concluída</div>
+    <div style="margin-top: 16px;"><span class="capsule">Status: {{ frequencia.status }}</span></div>
+  </div>
+</div>
+
+<div class="card" style="margin-top: 24px;">
+  <div class="banner">Últimos registros</div>
+  <table>
+    <thead>
+      <tr>
+        <th>Data</th>
+        <th>Atividade</th>
+        <th>Método</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for registro in registros %}
+      <tr>
+        <td>{{ registro.data }}</td>
+        <td>{{ registro.atividade }}</td>
+        <td>{{ registro.metodo }}</td>
+        <td><span class="status {{ registro.status_classe }}">{{ registro.status }}</span></td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+<div class="grid grid-2" style="margin-top: 24px;">
+  <div class="card">
+    <h3>Visão de auditoria</h3>
+    <p>Neste painel, os registros recebem log de timestamp para dar rastreabilidade e segurança.</p>
+    <ul>
+      <li>Identificação do bolsista</li>
+      <li>Dia e horário do registro</li>
+      <li>Fonte de registro (QR Code / Geofencing)</li>
+      <li>Status da validação</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>Próximos passos</h3>
+    <ul>
+      <li>Validar presença do bolsista no local</li>
+      <li>Integrar dados com o SUAP</li>
+      <li>Gerar relatório semanal</li>
+      <li>Notificar supervisor em caso de faltas</li>
+    </ul>
+  </div>
+</div>
+{% endblock %}

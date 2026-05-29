@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}TCC IFRN{% endblock %}</title>
+    <style>
+      :root {
+        --bg: #f4f7fb;
+        --surface: #ffffff;
+        --primary: #005ea5;
+        --primary-soft: #dbe9fb;
+        --accent: #f7b500;
+        --text: #1d2939;
+        --muted: #5b6677;
+      }
+      * { box-sizing: border-box; }
+      body { margin: 0; font-family: Inter, Arial, sans-serif; background: var(--bg); color: var(--text); }
+      header { background: var(--primary); color: white; padding: 24px 28px; }
+      header nav { display: flex; justify-content: space-between; align-items: center; gap: 18px; flex-wrap: wrap; }
+      header h1 { margin: 0; font-size: 1.55rem; }
+      header .menu a { color: white; text-decoration: none; margin-right: 18px; font-weight: 600; }
+      main { max-width: 1120px; margin: 24px auto; padding: 0 20px; }
+      .hero { display: grid; gap: 18px; padding: 24px; background: var(--surface); border-radius: 20px; box-shadow: 0 24px 70px rgba(15, 23, 42, 0.08); }
+      .card { background: var(--surface); border-radius: 18px; padding: 24px; box-shadow: 0 20px 40px rgba(15, 23, 42, 0.06); }
+      .grid { display: grid; gap: 24px; }
+      .grid-3 { grid-template-columns: repeat(3, minmax(200px, 1fr)); }
+      .grid-2 { grid-template-columns: repeat(2, minmax(220px, 1fr)); }
+      h2 { margin-top: 0; }
+      .badge { display: inline-flex; align-items: center; gap: 10px; padding: 6px 14px; border-radius: 999px; background: var(--primary-soft); color: var(--primary); font-weight: 700; font-size: 0.95rem; }
+      .button { display: inline-block; padding: 12px 18px; border-radius: 12px; background: var(--primary); color: white; text-decoration: none; font-weight: 700; transition: transform 0.15s ease; }
+      .button:hover { transform: translateY(-1px); }
+      table { width: 100%; border-collapse: collapse; margin-top: 14px; }
+      th, td { text-align: left; padding: 14px 12px; border-bottom: 1px solid #e5e7eb; }
+      th { color: var(--muted); font-size: 0.95rem; }
+      .status { padding: 6px 10px; border-radius: 999px; font-size: 0.85rem; font-weight: 700; }
+      .status.presente { background: #d1fae5; color: #065f46; }
+      .status.falta { background: #fee2e2; color: #991b1b; }
+      .status.pendente { background: #fef3c7; color: #92400e; }
+      footer { text-align: center; margin: 28px 0 16px; color: var(--muted); font-size: 0.95rem; }
+      .info-line { margin: 0; color: var(--muted); }
+      .summary-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 12px; }
+      .summary-item { background: #f8fafc; border-radius: 16px; padding: 16px; }
+      .summary-item strong { display: block; font-size: 1.35rem; margin-bottom: 6px; }
+      .actions { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 16px; }
+      .banner { display: inline-flex; gap: 10px; align-items: center; margin-bottom: 18px; font-weight: 700; }
+      .capsule { display: inline-block; background: var(--accent); color: #1a1a1a; border-radius: 999px; padding: 8px 14px; font-size: 0.92rem; }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div>
+          <h1>TCC IFRN</h1>
+          <p class="info-line">Sistema de gerenciamento de frequência de bolsistas</p>
+        </div>
+        <div class="menu">
+          <a href="/">Home</a>
+          <a href="/bolsista/frequencia/">Frequência do bolsista</a>
+          <a href="/coordenador/perfil/">Perfil do coordenador</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+      Projeto TCC IFRN — Controle de frequência de bolsistas.
+    </footer>
+  </body>
+</html>

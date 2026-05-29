@@ -1,0 +1,82 @@
+{% extends "core/base.html" %}
+
+{% block title %}Perfil do Coordenador | TCC IFRN{% endblock %}
+
+{% block content %}
+<div class="hero">
+  <span class="badge">Perfil do Coordenador</span>
+  <div>
+    <h2>Visão geral do coordenador</h2>
+    <p>Área para gerenciar bolsistas, acompanhar frequência, validar registros e coordenar a integração com o SUAP.</p>
+  </div>
+</div>
+
+<div class="grid grid-3" style="margin-top: 24px;">
+  <div class="card">
+    <h3>Dados pessoais</h3>
+    <p><strong>{{ coordenador.nome }}</strong></p>
+    <p class="info-line">Cargo: {{ coordenador.cargo }}</p>
+    <p class="info-line">Departamento: {{ coordenador.departamento }}</p>
+    <p class="info-line">Email: {{ coordenador.email }}</p>
+    <p class="info-line">Telefone: {{ coordenador.telefone }}</p>
+  </div>
+
+  <div class="card">
+    <h3>Indicadores</h3>
+    <ul class="summary-list">
+      <li class="summary-item"><strong>{{ coordenador.bolsistas_supervisionados }}</strong> bolsistas supervisionados</li>
+      <li class="summary-item"><strong>{{ coordenador.registros_pendentes }}</strong> registros pendentes</li>
+      <li class="summary-item"><strong>{{ coordenador.integracao_suap }}</strong></li>
+      <li class="summary-item"><strong>{{ coordenador.alertas }}</strong> alertas de frequência</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>Status SUAP</h3>
+    <p>{{ coordenador.suap_status_texto }}</p>
+    <div style="margin-top: 16px;"><span class="capsule">{{ coordenador.suap_status }}</span></div>
+  </div>
+</div>
+
+<div class="card" style="margin-top: 24px;">
+  <div class="banner">Ações rápidas</div>
+  <div class="actions">
+    <a href="#" class="button">Ver relatórios de frequência</a>
+    <a href="#" class="button">Checar notificações</a>
+    <a href="#" class="button">Atualizar integração SUAP</a>
+  </div>
+</div>
+
+<div class="grid grid-2" style="margin-top: 24px;">
+  <div class="card">
+    <h3>Bolsistas recentes</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Bolsista</th>
+          <th>Horas atuais</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for aluno in coordenador.bolsistas_recentes %}
+        <tr>
+          <td>{{ aluno.nome }}</td>
+          <td>{{ aluno.horas }}</td>
+          <td><span class="status {{ aluno.status_classe }}">{{ aluno.status }}</span></td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card">
+    <h3>Observações</h3>
+    <ul>
+      <li>Os registros pendentes devem ser validados até sexta-feira.</li>
+      <li>Verifique os alertas de geolocalização para atividades fora de área.</li>
+      <li>Confirme a sincronização com o SUAP diariamente.</li>
+    </ul>
+  </div>
+</div>
+{% endblock %}
