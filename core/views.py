@@ -1,4 +1,10 @@
+import base64
+from io import BytesIO
+
+from django.http import JsonResponse
 from django.shortcuts import render
+
+import qrcode
 
 
 def home(request):
@@ -30,6 +36,42 @@ def bolsista_frequencia(request):
         ],
     }
     return render(request, "core/bolsista_frequencia.html", context)
+
+
+def qr_code(request):
+    qr_payload = "https://ifrn.edu.br/"
+    qr = qrcode.QRCode(box_size=10, border=4)
+    qr.add_data(qr_payload)
+    qr.make(fit=True)
+
+    image = qr.make_image(fill_color="black", back_color="white")
+    buffer = BytesIO()
+    image.save(buffer, format="PNG")
+    qr_base64 = base64.b64encode(buffer.getvalue()).decode()
+
+    context = {
+        "qr_code_data": qr_base64,
+        "qr_payload": qr_payload,
+    }
+    return render(request, "core/qr_code.html", context)
+
+
+def geolocation(request):
+    if request.method == "POST":
+        latitude = request.POST.get("latitude")
+        longitude = request.POST.get("longitude")
+        accuracy = request.POST.get("accuracy")
+
+        response_data = {
+            "status": "success",
+            "message": "Localização registrada com sucesso.",
+            "latitude": latitude,
+            "longitude": longitude,
+            "accuracy": accuracy,
+        }
+        return JsonResponse(response_data)
+
+    return render(request, "core/geolocation.html")
 
 
 def coordenador_perfil(request):

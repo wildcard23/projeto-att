@@ -6,20 +6,26 @@
     <title>{% block title %}TCC IFRN{% endblock %}</title>
     <style>
       :root {
-        --bg: #f4f7fb;
+        --bg: #edf8f0;
         --surface: #ffffff;
-        --primary: #005ea5;
-        --primary-soft: #dbe9fb;
-        --accent: #f7b500;
-        --text: #1d2939;
-        --muted: #5b6677;
+        --primary: #1f7a1f;
+        --primary-soft: #d8f1d8;
+        --accent: #7fbf7f;
+        --text: #1a3f1a;
+        --muted: #4f6b4f;
       }
       * { box-sizing: border-box; }
       body { margin: 0; font-family: Inter, Arial, sans-serif; background: var(--bg); color: var(--text); }
-      header { background: var(--primary); color: white; padding: 24px 28px; }
+      header { background: white; color: var(--text); padding: 24px 28px; box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08); }
       header nav { display: flex; justify-content: space-between; align-items: center; gap: 18px; flex-wrap: wrap; }
-      header h1 { margin: 0; font-size: 1.55rem; }
-      header .menu a { color: white; text-decoration: none; margin-right: 18px; font-weight: 600; }
+      header .brand { display: flex; align-items: center; gap: 16px; }
+      header .brand-logo { width: 96px; min-height: 58px; padding: 8px; display: grid; place-items: center; background: white; border-radius: 20px; border: 1px solid rgba(31, 122, 31, 0.15); text-align: center; }
+      header .brand-logo img.logo-img { width: 100%; height: auto; object-fit: contain; }
+      header h1 { margin: 0; font-size: 1.85rem; font-weight: 800; letter-spacing: -0.04em; line-height: 1.05; }
+      header .menu a { color: var(--text); text-decoration: none; margin-right: 18px; font-weight: 700; }
+      h1, h2, h3 { font-family: Inter, Arial, sans-serif; letter-spacing: -0.03em; }
+      h2 { font-size: 2rem; line-height: 1.15; }
+      h3 { font-size: 1.1rem; line-height: 1.4; letter-spacing: -0.02em; }
       main { max-width: 1120px; margin: 24px auto; padding: 0 20px; }
       .hero { display: grid; gap: 18px; padding: 24px; background: var(--surface); border-radius: 20px; box-shadow: 0 24px 70px rgba(15, 23, 42, 0.08); }
       .card { background: var(--surface); border-radius: 18px; padding: 24px; box-shadow: 0 20px 40px rgba(15, 23, 42, 0.06); }
@@ -48,19 +54,7 @@
     </style>
   </head>
   <body>
-    <header>
-      <nav>
-        <div>
-          <h1>TCC IFRN</h1>
-          <p class="info-line">Sistema de gerenciamento de frequência de bolsistas</p>
-        </div>
-        <div class="menu">
-          <a href="/">Home</a>
-          <a href="/bolsista/frequencia/">Frequência do bolsista</a>
-          <a href="/coordenador/perfil/">Perfil do coordenador</a>
-        </div>
-      </nav>
-    </header>
+    {% include "core/header.html" %}
 
     <main>
       {% block content %}{% endblock %}

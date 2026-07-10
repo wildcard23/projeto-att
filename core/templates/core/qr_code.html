@@ -1,0 +1,19 @@
+{% extends "core/base.html" %}
+
+{% block title %}QR Code | TCC IFRN{% endblock %}
+
+{% block content %}
+<div class="hero">
+  <span class="badge">QR Code</span>
+  <div>
+    <h2>Gerar QR Code</h2>
+    <p>Use este QR code para acessar informações rápidas ou registrar presença com o sistema.</p>
+  </div>
+</div>
+
+<div class="card" style="margin-top: 24px; text-align: center;">
+  <h3>QR Code IFRN</h3>
+  <p style="margin-bottom: 20px;">Conteúdo: <strong>{{ qr_payload }}</strong></p>
+  <img src="data:image/png;base64,{{ qr_code_data }}" alt="QR Code" style="max-width: 320px; width: 100%; height: auto;" />
+</div>
+{% endblock %}

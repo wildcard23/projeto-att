@@ -1,0 +1,62 @@
+{% extends "core/base.html" %}
+
+{% block title %}Geolocalização | TCC IFRN{% endblock %}
+
+{% block content %}
+<div class="hero">
+  <div>
+    <span class="badge">Geolocalização</span>
+    <h2>Registrar presença por geolocalização</h2>
+    <p>Permita o acesso à localização para registrar sua presença automaticamente.</p>
+  </div>
+</div>
+
+<div class="card" style="margin-top: 24px;">
+  <h3>Registrar local</h3>
+  <p>Use o botão abaixo para enviar sua localização atual.</p>
+  <button id="register-location" class="button">Registrar localização</button>
+  <div id="location-result" style="margin-top: 24px; color: var(--text);"></div>
+</div>
+
+<script>
+  const button = document.getElementById('register-location');
+  const result = document.getElementById('location-result');
+
+  button.addEventListener('click', () => {
+    if (!navigator.geolocation) {
+      result.textContent = 'Geolocalização não é suportada neste navegador.';
+      return;
+    }
+
+    result.textContent = 'Solicitando localização...';
+
+    navigator.geolocation.getCurrentPosition(
+      position => {
+        const data = new FormData();
+        data.append('latitude', position.coords.latitude);
+        data.append('longitude', position.coords.longitude);
+        data.append('accuracy', position.coords.accuracy);
+
+        fetch('', {
+          method: 'POST',
+          body: data,
+          headers: {
+            'X-Requested-With': 'XMLHttpRequest'
+          }
+        })
+          .then(response => response.json())
+          .then(json => {
+            result.innerHTML = `Localização registrada com sucesso:<br><strong>Latitude:</strong> ${json.latitude}<br><strong>Longitude:</strong> ${json.longitude}<br><strong>Precisão:</strong> ${json.accuracy} metros`;
+          })
+          .catch(() => {
+            result.textContent = 'Falha ao registrar a localização.';
+          });
+      },
+      () => {
+        result.textContent = 'Não foi possível obter a localização.';
+      },
+      { enableHighAccuracy: true, timeout: 10000 }
+    );
+  });
+</script>
+{% endblock %}
