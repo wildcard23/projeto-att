@@ -1,0 +1,86 @@
+<div class="app-shell">
+  <header class="topbar">
+    <div class="brand">
+      <p>Integração Django + Angular</p>
+      <h1>{{ title() }}</h1>
+    </div>
+    <div class="button-row">
+      <button class="glow-btn" type="button" (click)="loadBolsista()">
+        Buscar dados do bolsista
+      </button>
+      <button class="outline-btn" type="button" (click)="loadAcoes()">
+        Carregar ações
+      </button>
+      <button class="outline-btn" type="button" (click)="goToDjango()">
+        Voltar para Django
+      </button>
+    </div>
+  </header>
+
+  <section class="panel">
+    <h2>Resumo do bolsista</h2>
+    <p class="panel-status">{{ status() }}</p>
+
+    <div *ngIf="bolsista(); else noBolsista">
+      <div class="grid grid-columns">
+        <article class="stat-card">
+          <h3>Nome</h3>
+          <p>{{ bolsista()?.nome }}</p>
+        </article>
+        <article class="stat-card">
+          <h3>Curso</h3>
+          <p>{{ bolsista()?.curso }}</p>
+        </article>
+        <article class="stat-card">
+          <h3>Supervisor</h3>
+          <p>{{ bolsista()?.supervisor }}</p>
+        </article>
+        <article class="stat-card">
+          <h3>Email</h3>
+          <p>{{ bolsista()?.email }}</p>
+        </article>
+      </div>
+
+      <div class="card">
+        <h3>Detalhes de frequência</h3>
+        <ul class="card-list">
+          <li><span>Presente</span><strong>{{ bolsista()?.presente }}</strong></li>
+          <li><span>Faltas</span><strong>{{ bolsista()?.faltas }}</strong></li>
+          <li><span>Carga horária</span><strong>{{ bolsista()?.carga_horaria }}h</strong></li>
+          <li><span>Registros</span><strong>{{ bolsista()?.registros }}</strong></li>
+          <li><span>Percentual</span><strong>{{ bolsista()?.percentual }}%</strong></li>
+          <li><span>Status</span><strong>{{ bolsista()?.status }}</strong></li>
+        </ul>
+      </div>
+    </div>
+
+    <ng-template #noBolsista>
+      <div class="empty-state">
+        <p>Nenhum dado do bolsista carregado ainda. Use o botão acima.</p>
+      </div>
+    </ng-template>
+  </section>
+
+  <section class="panel">
+    <h2>Ações rápidas</h2>
+    <div *ngIf="acoes().length; else noAcoes">
+      <div class="grid grid-columns">
+        <article class="action-card" *ngFor="let acao of acoes()">
+          <div>
+            <h3>{{ acao.title }}</h3>
+            <p>{{ acao.description }}</p>
+          </div>
+          <button class="outline-btn" type="button" (click)="openAcao(acao)">
+            Abrir
+          </button>
+        </article>
+      </div>
+    </div>
+
+    <ng-template #noAcoes>
+      <div class="empty-state">
+        <p>Carregue ações para mostrar botões úteis do backend.</p>
+      </div>
+    </ng-template>
+  </section>
+</div>

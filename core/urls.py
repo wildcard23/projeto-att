@@ -9,4 +9,6 @@ urlpatterns = [
     path("bolsista/qr-code/", views.qr_code, name="qr_code"),
     path("bolsista/geolocalizacao/", views.geolocation, name="geolocation"),
     path("coordenador/perfil/", views.coordenador_perfil, name="coordenador_perfil"),
+    path("api/bolsista/", views.bolsista_api, name="bolsista_api"),
+    path("api/acoes/", views.acoes_api, name="acoes_api"),
 ]

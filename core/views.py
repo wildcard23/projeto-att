@@ -96,3 +96,45 @@ def coordenador_perfil(request):
         }
     }
     return render(request, "core/coordenador_perfil.html", context)
+
+
+def bolsista_api(request):
+    data = {
+        "bolsista": {
+            "nome": "Ana Beatriz Silva",
+            "curso": "Engenharia de Software",
+            "programa": "Bolsa Iniciação Científica",
+            "supervisor": "Prof. Dr. Carlos Pereira",
+            "email": "ana.silva@ifrn.edu.br",
+            "presente": 12,
+            "faltas": 3,
+            "carga_horaria": 15,
+            "registros": 9,
+            "percentual": 80,
+            "status": "Em dia",
+        }
+    }
+    return JsonResponse(data)
+
+
+def acoes_api(request):
+    data = {
+        "acoes": [
+            {
+                "title": "Abrir perfil do coordenador",
+                "description": "Visualize a página do coordenador no backend Django.",
+                "url": "http://localhost:8000/coordenador/perfil/",
+            },
+            {
+                "title": "Abrir frequência do bolsista",
+                "description": "Veja a página de frequência com dados do bolsista.",
+                "url": "http://localhost:8000/bolsista/frequencia/",
+            },
+            {
+                "title": "Abrir QR Code",
+                "description": "Veja o QR Code gerado pelo backend Django.",
+                "url": "http://localhost:8000/bolsista/qr-code/",
+            },
+        ]
+    }
+    return JsonResponse(data)
