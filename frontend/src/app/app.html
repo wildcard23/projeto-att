@@ -60,6 +60,57 @@
       </div>
     </ng-template>
   </section>
+  
+  <section class="panel">
+    <h2>Kanban de Tarefas</h2>
+    <div class="kanban-actions">
+      <button class="glow-btn" type="button" (click)="createTask()">Criar Tarefa</button>
+      <button class="outline-btn" type="button" (click)="loadTasks()">Atualizar Tarefas</button>
+    </div>
+    <div class="kanban">
+      <div class="kanban-column" (dragenter)="onDragEnter($event)" (dragleave)="onDragLeave($event)" (dragover)="onDragOver($event)" (drop)="onDrop($event, 'todo')">
+        <h3>To Do</h3>
+        <div *ngFor="let t of tasks()">
+          <div *ngIf="t.status === 'todo'" class="task-card" draggable="true" (dragstart)="onDragStart($event, t.id)" (dragend)="onDragEnd($event)">
+            <h4>{{ t.title }}</h4>
+            <p class="muted">{{ t.description }}</p>
+            <div class="task-actions">
+              <button class="small outline" (click)="moveTask(t.id, 'in_progress')">Mover</button>
+              <button class="small" (click)="associateTask(t.id)">Associar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="kanban-column" (dragenter)="onDragEnter($event)" (dragleave)="onDragLeave($event)" (dragover)="onDragOver($event)" (drop)="onDrop($event, 'in_progress')">
+        <h3>In Progress</h3>
+        <div *ngFor="let t of tasks()">
+          <div *ngIf="t.status === 'in_progress'" class="task-card" draggable="true" (dragstart)="onDragStart($event, t.id)" (dragend)="onDragEnd($event)">
+            <h4>{{ t.title }}</h4>
+            <p class="muted">{{ t.description }}</p>
+            <div class="task-actions">
+              <button class="small outline" (click)="moveTask(t.id, 'todo')">←</button>
+              <button class="small" (click)="moveTask(t.id, 'done')">→</button>
+              <button class="small" (click)="associateTask(t.id)">Associar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="kanban-column" (dragenter)="onDragEnter($event)" (dragleave)="onDragLeave($event)" (dragover)="onDragOver($event)" (drop)="onDrop($event, 'done')">
+        <h3>Done</h3>
+        <div *ngFor="let t of tasks()">
+          <div *ngIf="t.status === 'done'" class="task-card done" draggable="true" (dragstart)="onDragStart($event, t.id)" (dragend)="onDragEnd($event)">
+            <h4>{{ t.title }}</h4>
+            <p class="muted">{{ t.description }}</p>
+            <div class="task-actions">
+              <button class="small outline" (click)="moveTask(t.id, 'in_progress')">←</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <section class="panel">
     <h2>Ações rápidas</h2>

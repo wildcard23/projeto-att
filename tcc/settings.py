@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/6.0/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -122,3 +123,11 @@ CORS_ALLOWED_ORIGINS = [
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
 STATIC_URL = "static/"
+
+# SUAP integration settings (set via environment variables)
+SUAP_API_URL = os.environ.get('SUAP_API_URL')
+SUAP_TOKEN_URL = os.environ.get('SUAP_TOKEN_URL')
+SUAP_CLIENT_ID = os.environ.get('SUAP_CLIENT_ID')
+SUAP_CLIENT_SECRET = os.environ.get('SUAP_CLIENT_SECRET')
+SUAP_OAUTH_FLOW = os.environ.get('SUAP_OAUTH_FLOW')  # e.g. 'client_credentials' or 'password'
+SUAP_API_KEY = os.environ.get('SUAP_API_KEY')

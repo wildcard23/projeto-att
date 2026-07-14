@@ -1,0 +1,333 @@
+
+> frontend@0.0.0 start
+> ng serve --host 0.0.0.0 --port 4200
+
+
+Warning: This is a simple server for use in testing or debugging Angular applications
+locally. It hasn't been reviewed for security issues.
+
+Binding this server to an open connection can result in compromising your application or
+computer. Using a different host than the one passed to the "--host" flag might result in
+websocket connection issues.
+    
+❯ Building...
+✔ Building...
+Initial chunk files | Names         | Raw size
+main.js             | main          | 22.87 kB | 
+styles.css          | styles        |  3.37 kB | 
+
+                    | Initial total | 26.24 kB
+
+Application bundle generation complete. [2.908 seconds] - 2026-07-14T12:28:55.279Z
+
+Watch mode enabled. Watching for file changes...
+NOTE: Raw file sizes do not reflect development server per-request transformations.
+  ➜  Local:   http://localhost:4200/
+  ➜  Network: http://10.0.12.248:4200/
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Initial chunk files | Names | Raw size
+main.js             | main  | 24.45 kB | 
+
+Application bundle generation complete. [0.596 seconds] - 2026-07-14T12:44:06.610Z
+
+Page reload sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Initial chunk files | Names | Raw size
+main.js             | main  | 33.77 kB | 
+
+Application bundle generation complete. [0.636 seconds] - 2026-07-14T12:44:31.618Z
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Initial chunk files | Names         | Raw size
+main.js             | main          | 33.77 kB | 
+styles.css          | styles        |  3.37 kB | 
+
+                    | Initial total | 37.14 kB
+
+Application bundle generation complete. [0.964 seconds] - 2026-07-14T12:45:30.046Z
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Application bundle generation failed. [0.605 seconds] - 2026-07-14T12:48:42.355Z
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mTS2339: Property 'onDragOver' does not exist on type 'App'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/app.html:71:45:
+[37m      71 │ ...kanban-column" (dragover)="[32monDragOver[37m($event)" (drop)="onDrop($...
+         ╵                               [32m~~~~~~~~~~[0m
+
+  Error occurs in the template of component App.
+
+    src/app/app.ts:35:15:
+[37m      35 │   templateUrl: [32m'./app.html'[37m,
+         ╵                [32m~~~~~~~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mTS2339: Property 'onDrop' does not exist on type 'App'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/app.html:71:73:
+[37m      71 │ ..." (dragover)="onDragOver($event)" (drop)="[32monDrop[37m($event, 'todo')">
+         ╵                                              [32m~~~~~~[0m
+
+  Error occurs in the template of component App.
+
+    src/app/app.ts:35:15:
+[37m      35 │   templateUrl: [32m'./app.html'[37m,
+         ╵                [32m~~~~~~~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mTS2339: Property 'onDragStart' does not exist on type 'App'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/app.html:74:91:
+[37m      74 │ ...sk-card" draggable="true" (dragstart)="[32monDragStart[37m($event, t.id)">
+         ╵                                           [32m~~~~~~~~~~~[0m
+
+  Error occurs in the template of component App.
+
+    src/app/app.ts:35:15:
+[37m      35 │   templateUrl: [32m'./app.html'[37m,
+         ╵                [32m~~~~~~~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mTS2339: Property 'onDragOver' does not exist on type 'App'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/app.html:85:45:
+[37m      85 │ ...kanban-column" (dragover)="[32monDragOver[37m($event)" (drop)="onDrop($...
+         ╵                               [32m~~~~~~~~~~[0m
+
+  Error occurs in the template of component App.
+
+    src/app/app.ts:35:15:
+[37m      35 │   templateUrl: [32m'./app.html'[37m,
+         ╵                [32m~~~~~~~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mTS2339: Property 'onDrop' does not exist on type 'App'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/app.html:85:73:
+[37m      85 │ ...over)="onDragOver($event)" (drop)="[32monDrop[37m($event, 'in_progress')">
+         ╵                                       [32m~~~~~~[0m
+
+  Error occurs in the template of component App.
+
+    src/app/app.ts:35:15:
+[37m      35 │   templateUrl: [32m'./app.html'[37m,
+         ╵                [32m~~~~~~~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mTS2339: Property 'onDragStart' does not exist on type 'App'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/app.html:88:98:
+[37m      88 │ ...sk-card" draggable="true" (dragstart)="[32monDragStart[37m($event, t.id)">
+         ╵                                           [32m~~~~~~~~~~~[0m
+
+  Error occurs in the template of component App.
+
+    src/app/app.ts:35:15:
+[37m      35 │   templateUrl: [32m'./app.html'[37m,
+         ╵                [32m~~~~~~~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mTS2339: Property 'onDragOver' does not exist on type 'App'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/app.html:100:45:
+[37m      100 │ ...anban-column" (dragover)="[32monDragOver[37m($event)" (drop)="onDrop($...
+          ╵                              [32m~~~~~~~~~~[0m
+
+  Error occurs in the template of component App.
+
+    src/app/app.ts:35:15:
+[37m      35 │   templateUrl: [32m'./app.html'[37m,
+         ╵                [32m~~~~~~~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mTS2339: Property 'onDrop' does not exist on type 'App'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/app.html:100:73:
+[37m      100 │ ... (dragover)="onDragOver($event)" (drop)="[32monDrop[37m($event, 'done')">
+          ╵                                             [32m~~~~~~[0m
+
+  Error occurs in the template of component App.
+
+    src/app/app.ts:35:15:
+[37m      35 │   templateUrl: [32m'./app.html'[37m,
+         ╵                [32m~~~~~~~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mTS2339: Property 'onDragStart' does not exist on type 'App'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/app.html:103:96:
+[37m      103 │ ...d done" draggable="true" (dragstart)="[32monDragStart[37m($event, t.id)">
+          ╵                                          [32m~~~~~~~~~~~[0m
+
+  Error occurs in the template of component App.
+
+    src/app/app.ts:35:15:
+[37m      35 │   templateUrl: [32m'./app.html'[37m,
+         ╵                [32m~~~~~~~~~~~~[0m
+
+
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Initial chunk files | Names         | Raw size
+main.js             | main          | 37.08 kB | 
+styles.css          | styles        |  3.37 kB | 
+
+                    | Initial total | 40.45 kB
+
+Application bundle generation complete. [0.539 seconds] - 2026-07-14T12:49:00.776Z
+
+Page reload sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Initial chunk files | Names | Raw size
+main.js             | main  | 40.35 kB | 
+
+Application bundle generation complete. [0.406 seconds] - 2026-07-14T12:49:21.457Z
+
+Component update sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Application bundle generation failed. [0.591 seconds] - 2026-07-14T12:52:08.985Z
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mTS2339: Property 'onDragEnter' does not exist on type 'App'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/app.html:71:46:
+[37m      71 │ ...nban-column" (dragenter)="[32monDragEnter[37m($event)" (dragleave)="onD...
+         ╵                              [32m~~~~~~~~~~~[0m
+
+  Error occurs in the template of component App.
+
+    src/app/app.ts:35:15:
+[37m      35 │   templateUrl: [32m'./app.html'[37m,
+         ╵                [32m~~~~~~~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mTS2339: Property 'onDragLeave' does not exist on type 'App'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/app.html:71:80:
+[37m      71 │ ...ter($event)" (dragleave)="[32monDragLeave[37m($event)" (dragover)="onDr...
+         ╵                              [32m~~~~~~~~~~~[0m
+
+  Error occurs in the template of component App.
+
+    src/app/app.ts:35:15:
+[37m      35 │   templateUrl: [32m'./app.html'[37m,
+         ╵                [32m~~~~~~~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mTS2339: Property 'onDragEnd' does not exist on type 'App'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/app.html:74:129:
+[37m      74 │ ...gstart)="onDragStart($event, t.id)" (dragend)="[32monDragEnd[37m($event)">
+         ╵                                                   [32m~~~~~~~~~[0m
+
+  Error occurs in the template of component App.
+
+    src/app/app.ts:35:15:
+[37m      35 │   templateUrl: [32m'./app.html'[37m,
+         ╵                [32m~~~~~~~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mTS2339: Property 'onDragEnter' does not exist on type 'App'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/app.html:85:46:
+[37m      85 │ ...nban-column" (dragenter)="[32monDragEnter[37m($event)" (dragleave)="onD...
+         ╵                              [32m~~~~~~~~~~~[0m
+
+  Error occurs in the template of component App.
+
+    src/app/app.ts:35:15:
+[37m      35 │   templateUrl: [32m'./app.html'[37m,
+         ╵                [32m~~~~~~~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mTS2339: Property 'onDragLeave' does not exist on type 'App'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/app.html:85:80:
+[37m      85 │ ...ter($event)" (dragleave)="[32monDragLeave[37m($event)" (dragover)="onDr...
+         ╵                              [32m~~~~~~~~~~~[0m
+
+  Error occurs in the template of component App.
+
+    src/app/app.ts:35:15:
+[37m      35 │   templateUrl: [32m'./app.html'[37m,
+         ╵                [32m~~~~~~~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mTS2339: Property 'onDragEnd' does not exist on type 'App'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/app.html:88:136:
+[37m      88 │ ...gstart)="onDragStart($event, t.id)" (dragend)="[32monDragEnd[37m($event)">
+         ╵                                                   [32m~~~~~~~~~[0m
+
+  Error occurs in the template of component App.
+
+    src/app/app.ts:35:15:
+[37m      35 │   templateUrl: [32m'./app.html'[37m,
+         ╵                [32m~~~~~~~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mTS2339: Property 'onDragEnter' does not exist on type 'App'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/app.html:100:46:
+[37m      100 │ ...nban-column" (dragenter)="[32monDragEnter[37m($event)" (dragleave)="on...
+          ╵                              [32m~~~~~~~~~~~[0m
+
+  Error occurs in the template of component App.
+
+    src/app/app.ts:35:15:
+[37m      35 │   templateUrl: [32m'./app.html'[37m,
+         ╵                [32m~~~~~~~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mTS2339: Property 'onDragLeave' does not exist on type 'App'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/app.html:100:80:
+[37m      100 │ ...ter($event)" (dragleave)="[32monDragLeave[37m($event)" (dragover)="onD...
+          ╵                              [32m~~~~~~~~~~~[0m
+
+  Error occurs in the template of component App.
+
+    src/app/app.ts:35:15:
+[37m      35 │   templateUrl: [32m'./app.html'[37m,
+         ╵                [32m~~~~~~~~~~~~[0m
+
+
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mTS2339: Property 'onDragEnd' does not exist on type 'App'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/app.html:103:134:
+[37m      103 │ ...start)="onDragStart($event, t.id)" (dragend)="[32monDragEnd[37m($event)">
+          ╵                                                  [32m~~~~~~~~~[0m
+
+  Error occurs in the template of component App.
+
+    src/app/app.ts:35:15:
+[37m      35 │   templateUrl: [32m'./app.html'[37m,
+         ╵                [32m~~~~~~~~~~~~[0m
+
+
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Initial chunk files | Names         | Raw size
+main.js             | main          | 42.87 kB | 
+styles.css          | styles        |  3.37 kB | 
+
+                    | Initial total | 46.24 kB
+
+Application bundle generation complete. [0.638 seconds] - 2026-07-14T12:52:24.402Z
+
+Page reload sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Initial chunk files | Names | Raw size
+main.js             | main  | 43.88 kB | 
+
+Application bundle generation complete. [0.349 seconds] - 2026-07-14T12:52:32.974Z
+
+Component update sent to client(s).

@@ -1,0 +1,541 @@
+Watching for file changes with StatReloader
+[14/Jul/2026 09:28:57] "GET / HTTP/1.1" 200 5995
+[14/Jul/2026 09:29:04] "GET / HTTP/1.1" 200 5995
+[14/Jul/2026 09:29:07] "GET /bolsista/frequencia/ HTTP/1.1" 200 7972
+[14/Jul/2026 09:29:10] "GET /bolsista/geolocalizacao/ HTTP/1.1" 200 6632
+[14/Jul/2026 09:29:33] "GET /bolsista/qr-code/ HTTP/1.1" 200 5931
+/workspaces/projeto-att/core/models.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+July 14, 2026 - 09:28:51
+Django version 6.0.5, using settings 'tcc.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CONTROL-C.
+
+WARNING: This is a development server. Do not use it in a production setting. Use a production WSGI or ASGI server instead.
+For more information on production servers see: https://docs.djangoproject.com/en/6.0/howto/deployment/
+Watching for file changes with StatReloader
+/workspaces/projeto-att/core/urls.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+July 14, 2026 - 09:37:59
+Django version 6.0.5, using settings 'tcc.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CONTROL-C.
+
+WARNING: This is a development server. Do not use it in a production setting. Use a production WSGI or ASGI server instead.
+For more information on production servers see: https://docs.djangoproject.com/en/6.0/howto/deployment/
+Watching for file changes with StatReloader
+Exception in thread django-main-thread:
+Traceback (most recent call last):
+  File "/home/codespace/.python/current/lib/python3.12/threading.py", line 1073, in _bootstrap_inner
+    self.run()
+  File "/home/codespace/.python/current/lib/python3.12/threading.py", line 1010, in run
+    self._target(*self._args, **self._kwargs)
+  File "/workspaces/projeto-att/.venv/lib/python3.12/site-packages/django/utils/autoreload.py", line 64, in wrapper
+    fn(*args, **kwargs)
+  File "/workspaces/projeto-att/.venv/lib/python3.12/site-packages/django/core/management/commands/runserver.py", line 134, in inner_run
+    self.check(**check_kwargs)
+  File "/workspaces/projeto-att/.venv/lib/python3.12/site-packages/django/core/management/base.py", line 496, in check
+    all_issues = checks.run_checks(
+                 ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/projeto-att/.venv/lib/python3.12/site-packages/django/core/checks/registry.py", line 89, in run_checks
+    new_errors = check(app_configs=app_configs, databases=databases)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/projeto-att/.venv/lib/python3.12/site-packages/django/core/checks/urls.py", line 16, in check_url_config
+    return check_resolver(resolver)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/projeto-att/.venv/lib/python3.12/site-packages/django/core/checks/urls.py", line 26, in check_resolver
+    return check_method()
+           ^^^^^^^^^^^^^^
+  File "/workspaces/projeto-att/.venv/lib/python3.12/site-packages/django/urls/resolvers.py", line 541, in check
+    for pattern in self.url_patterns:
+                   ^^^^^^^^^^^^^^^^^
+  File "/workspaces/projeto-att/.venv/lib/python3.12/site-packages/django/utils/functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/projeto-att/.venv/lib/python3.12/site-packages/django/urls/resolvers.py", line 729, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+                       ^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/projeto-att/.venv/lib/python3.12/site-packages/django/utils/functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/projeto-att/.venv/lib/python3.12/site-packages/django/urls/resolvers.py", line 722, in urlconf_module
+    return import_module(self.urlconf_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/codespace/.python/current/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 994, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/workspaces/projeto-att/tcc/urls.py", line 22, in <module>
+    path("", include("core.urls", namespace="core")),
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/projeto-att/.venv/lib/python3.12/site-packages/django/urls/conf.py", line 39, in include
+    urlconf_module = import_module(urlconf_module)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/codespace/.python/current/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 994, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/workspaces/projeto-att/core/urls.py", line 14, in <module>
+    path("api/registrar/", views.registrar_presenca, name="registrar_presenca"),
+                           ^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'core.views' has no attribute 'registrar_presenca'
+/workspaces/projeto-att/core/views.py changed, reloading.
+Performing system checks...
+
+Watching for file changes with StatReloader
+[14/Jul/2026 09:39:29] "GET / HTTP/1.1" 200 5995
+Not Found: /core/api/registrar/
+[14/Jul/2026 09:40:00] "POST /core/api/registrar/ HTTP/1.1" 404 4935
+Not Found: /core/api/registrar/
+[14/Jul/2026 09:40:15] "POST /core/api/registrar/ HTTP/1.1" 404 4935
+[14/Jul/2026 09:40:51] "POST /api/registrar/ HTTP/1.1" 200 25
+/workspaces/projeto-att/core/models.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+July 14, 2026 - 09:39:05
+Django version 6.0.5, using settings 'tcc.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CONTROL-C.
+
+WARNING: This is a development server. Do not use it in a production setting. Use a production WSGI or ASGI server instead.
+For more information on production servers see: https://docs.djangoproject.com/en/6.0/howto/deployment/
+Watching for file changes with StatReloader
+/workspaces/projeto-att/core/urls.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+July 14, 2026 - 09:42:37
+Django version 6.0.5, using settings 'tcc.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CONTROL-C.
+
+WARNING: This is a development server. Do not use it in a production setting. Use a production WSGI or ASGI server instead.
+For more information on production servers see: https://docs.djangoproject.com/en/6.0/howto/deployment/
+Watching for file changes with StatReloader
+Exception in thread django-main-thread:
+Traceback (most recent call last):
+  File "/home/codespace/.python/current/lib/python3.12/threading.py", line 1073, in _bootstrap_inner
+    self.run()
+  File "/home/codespace/.python/current/lib/python3.12/threading.py", line 1010, in run
+    self._target(*self._args, **self._kwargs)
+  File "/workspaces/projeto-att/.venv/lib/python3.12/site-packages/django/utils/autoreload.py", line 64, in wrapper
+    fn(*args, **kwargs)
+  File "/workspaces/projeto-att/.venv/lib/python3.12/site-packages/django/core/management/commands/runserver.py", line 134, in inner_run
+    self.check(**check_kwargs)
+  File "/workspaces/projeto-att/.venv/lib/python3.12/site-packages/django/core/management/base.py", line 496, in check
+    all_issues = checks.run_checks(
+                 ^^^^^^^^^^^^^^^^^^
+  File "/workspaces/projeto-att/.venv/lib/python3.12/site-packages/django/core/checks/registry.py", line 89, in run_checks
+    new_errors = check(app_configs=app_configs, databases=databases)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/projeto-att/.venv/lib/python3.12/site-packages/django/core/checks/urls.py", line 16, in check_url_config
+    return check_resolver(resolver)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/projeto-att/.venv/lib/python3.12/site-packages/django/core/checks/urls.py", line 26, in check_resolver
+    return check_method()
+           ^^^^^^^^^^^^^^
+  File "/workspaces/projeto-att/.venv/lib/python3.12/site-packages/django/urls/resolvers.py", line 541, in check
+    for pattern in self.url_patterns:
+                   ^^^^^^^^^^^^^^^^^
+  File "/workspaces/projeto-att/.venv/lib/python3.12/site-packages/django/utils/functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/projeto-att/.venv/lib/python3.12/site-packages/django/urls/resolvers.py", line 729, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+                       ^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/projeto-att/.venv/lib/python3.12/site-packages/django/utils/functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/projeto-att/.venv/lib/python3.12/site-packages/django/urls/resolvers.py", line 722, in urlconf_module
+    return import_module(self.urlconf_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/codespace/.python/current/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 994, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/workspaces/projeto-att/tcc/urls.py", line 22, in <module>
+    path("", include("core.urls", namespace="core")),
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/projeto-att/.venv/lib/python3.12/site-packages/django/urls/conf.py", line 39, in include
+    urlconf_module = import_module(urlconf_module)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/codespace/.python/current/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 994, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/workspaces/projeto-att/core/urls.py", line 17, in <module>
+    path("api/tasks/", views.tasks_list, name="tasks_list"),
+                       ^^^^^^^^^^^^^^^^
+AttributeError: module 'core.views' has no attribute 'tasks_list'
+/workspaces/projeto-att/core/views.py changed, reloading.
+Performing system checks...
+
+Watching for file changes with StatReloader
+[14/Jul/2026 09:43:14] "GET / HTTP/1.1" 200 5995
+[14/Jul/2026 09:43:25] "GET /bolsista/frequencia/ HTTP/1.1" 200 7972
+[14/Jul/2026 09:43:27] "GET /bolsista/geolocalizacao/ HTTP/1.1" 200 6632
+[14/Jul/2026 09:43:37] "GET /coordenador/perfil/ HTTP/1.1" 200 7356
+[14/Jul/2026 09:44:02] "GET /coordenador/perfil/ HTTP/1.1" 200 7356
+/workspaces/projeto-att/core/views.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+July 14, 2026 - 09:43:06
+Django version 6.0.5, using settings 'tcc.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CONTROL-C.
+
+WARNING: This is a development server. Do not use it in a production setting. Use a production WSGI or ASGI server instead.
+For more information on production servers see: https://docs.djangoproject.com/en/6.0/howto/deployment/
+Watching for file changes with StatReloader
+/workspaces/projeto-att/core/models.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+July 14, 2026 - 09:45:30
+Django version 6.0.5, using settings 'tcc.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CONTROL-C.
+
+WARNING: This is a development server. Do not use it in a production setting. Use a production WSGI or ASGI server instead.
+For more information on production servers see: https://docs.djangoproject.com/en/6.0/howto/deployment/
+Watching for file changes with StatReloader
+/workspaces/projeto-att/core/views.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+July 14, 2026 - 09:56:16
+Django version 6.0.5, using settings 'tcc.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CONTROL-C.
+
+WARNING: This is a development server. Do not use it in a production setting. Use a production WSGI or ASGI server instead.
+For more information on production servers see: https://docs.djangoproject.com/en/6.0/howto/deployment/
+Watching for file changes with StatReloader
+/workspaces/projeto-att/core/urls.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+July 14, 2026 - 09:56:53
+Django version 6.0.5, using settings 'tcc.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CONTROL-C.
+
+WARNING: This is a development server. Do not use it in a production setting. Use a production WSGI or ASGI server instead.
+For more information on production servers see: https://docs.djangoproject.com/en/6.0/howto/deployment/
+Watching for file changes with StatReloader
+[14/Jul/2026 09:58:08] "GET / HTTP/1.1" 200 5995
+/workspaces/projeto-att/tcc/settings.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+July 14, 2026 - 09:56:58
+Django version 6.0.5, using settings 'tcc.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CONTROL-C.
+
+WARNING: This is a development server. Do not use it in a production setting. Use a production WSGI or ASGI server instead.
+For more information on production servers see: https://docs.djangoproject.com/en/6.0/howto/deployment/
+Watching for file changes with StatReloader
+/workspaces/projeto-att/core/models.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+July 14, 2026 - 10:01:21
+Django version 6.0.5, using settings 'tcc.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CONTROL-C.
+
+WARNING: This is a development server. Do not use it in a production setting. Use a production WSGI or ASGI server instead.
+For more information on production servers see: https://docs.djangoproject.com/en/6.0/howto/deployment/
+Watching for file changes with StatReloader
+/workspaces/projeto-att/core/views.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+July 14, 2026 - 10:01:35
+Django version 6.0.5, using settings 'tcc.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CONTROL-C.
+
+WARNING: This is a development server. Do not use it in a production setting. Use a production WSGI or ASGI server instead.
+For more information on production servers see: https://docs.djangoproject.com/en/6.0/howto/deployment/
+Watching for file changes with StatReloader
+/workspaces/projeto-att/core/views.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+July 14, 2026 - 10:01:57
+Django version 6.0.5, using settings 'tcc.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CONTROL-C.
+
+WARNING: This is a development server. Do not use it in a production setting. Use a production WSGI or ASGI server instead.
+For more information on production servers see: https://docs.djangoproject.com/en/6.0/howto/deployment/
+Watching for file changes with StatReloader
+/workspaces/projeto-att/core/views.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+July 14, 2026 - 10:03:40
+Django version 6.0.5, using settings 'tcc.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CONTROL-C.
+
+WARNING: This is a development server. Do not use it in a production setting. Use a production WSGI or ASGI server instead.
+For more information on production servers see: https://docs.djangoproject.com/en/6.0/howto/deployment/
+Watching for file changes with StatReloader
+/workspaces/projeto-att/core/views.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+July 14, 2026 - 10:03:49
+Django version 6.0.5, using settings 'tcc.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CONTROL-C.
+
+WARNING: This is a development server. Do not use it in a production setting. Use a production WSGI or ASGI server instead.
+For more information on production servers see: https://docs.djangoproject.com/en/6.0/howto/deployment/
+Watching for file changes with StatReloader
+/workspaces/projeto-att/core/views.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+July 14, 2026 - 10:05:44
+Django version 6.0.5, using settings 'tcc.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CONTROL-C.
+
+WARNING: This is a development server. Do not use it in a production setting. Use a production WSGI or ASGI server instead.
+For more information on production servers see: https://docs.djangoproject.com/en/6.0/howto/deployment/
+Watching for file changes with StatReloader
+[14/Jul/2026 10:05:51] "GET / HTTP/1.1" 200 5995
+[14/Jul/2026 10:05:56] "GET / HTTP/1.1" 200 5995
+[14/Jul/2026 10:05:58] "GET /bolsista/frequencia/ HTTP/1.1" 200 7972
+[14/Jul/2026 10:06:10] "GET /bolsista/qr-code/ HTTP/1.1" 200 5931
+[14/Jul/2026 10:06:18] "GET / HTTP/1.1" 200 5995
+[14/Jul/2026 10:06:22] "GET /bolsista/frequencia/ HTTP/1.1" 200 7972
+[14/Jul/2026 10:06:24] "GET /coordenador/perfil/ HTTP/1.1" 200 7356
+[14/Jul/2026 10:06:29] "GET / HTTP/1.1" 200 5995
+/workspaces/projeto-att/tcc/settings.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+July 14, 2026 - 10:05:49
+Django version 6.0.5, using settings 'tcc.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CONTROL-C.
+
+WARNING: This is a development server. Do not use it in a production setting. Use a production WSGI or ASGI server instead.
+For more information on production servers see: https://docs.djangoproject.com/en/6.0/howto/deployment/
+Watching for file changes with StatReloader
+/workspaces/projeto-att/core/views.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+July 14, 2026 - 10:07:37
+Django version 6.0.5, using settings 'tcc.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CONTROL-C.
+
+WARNING: This is a development server. Do not use it in a production setting. Use a production WSGI or ASGI server instead.
+For more information on production servers see: https://docs.djangoproject.com/en/6.0/howto/deployment/
+Watching for file changes with StatReloader
+/workspaces/projeto-att/core/models.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+July 14, 2026 - 10:07:48
+Django version 6.0.5, using settings 'tcc.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CONTROL-C.
+
+WARNING: This is a development server. Do not use it in a production setting. Use a production WSGI or ASGI server instead.
+For more information on production servers see: https://docs.djangoproject.com/en/6.0/howto/deployment/
+Watching for file changes with StatReloader
+Exception in thread django-main-thread:
+Traceback (most recent call last):
+  File "/home/codespace/.python/current/lib/python3.12/threading.py", line 1073, in _bootstrap_inner
+    self.run()
+  File "/home/codespace/.python/current/lib/python3.12/threading.py", line 1010, in run
+    self._target(*self._args, **self._kwargs)
+  File "/workspaces/projeto-att/.venv/lib/python3.12/site-packages/django/utils/autoreload.py", line 64, in wrapper
+    fn(*args, **kwargs)
+  File "/workspaces/projeto-att/.venv/lib/python3.12/site-packages/django/core/management/commands/runserver.py", line 124, in inner_run
+    autoreload.raise_last_exception()
+  File "/workspaces/projeto-att/.venv/lib/python3.12/site-packages/django/utils/autoreload.py", line 86, in raise_last_exception
+    raise _exception[1]
+  File "/workspaces/projeto-att/.venv/lib/python3.12/site-packages/django/core/management/__init__.py", line 395, in execute
+    autoreload.check_errors(django.setup)()
+  File "/workspaces/projeto-att/.venv/lib/python3.12/site-packages/django/utils/autoreload.py", line 64, in wrapper
+    fn(*args, **kwargs)
+  File "/workspaces/projeto-att/.venv/lib/python3.12/site-packages/django/__init__.py", line 24, in setup
+    apps.populate(settings.INSTALLED_APPS)
+  File "/workspaces/projeto-att/.venv/lib/python3.12/site-packages/django/apps/registry.py", line 116, in populate
+    app_config.import_models()
+  File "/workspaces/projeto-att/.venv/lib/python3.12/site-packages/django/apps/config.py", line 269, in import_models
+    self.models_module = import_module(models_module_name)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/codespace/.python/current/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 990, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1128, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1058, in source_to_code
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/workspaces/projeto-att/core/models.py", line 83
+    +
+     ^
+SyntaxError: invalid syntax
+/workspaces/projeto-att/core/models.py changed, reloading.
+Watching for file changes with StatReloader
+Exception in thread django-main-thread:
+Traceback (most recent call last):
+  File "/home/codespace/.python/current/lib/python3.12/threading.py", line 1073, in _bootstrap_inner
+    self.run()
+  File "/home/codespace/.python/current/lib/python3.12/threading.py", line 1010, in run
+    self._target(*self._args, **self._kwargs)
+  File "/workspaces/projeto-att/.venv/lib/python3.12/site-packages/django/utils/autoreload.py", line 64, in wrapper
+    fn(*args, **kwargs)
+  File "/workspaces/projeto-att/.venv/lib/python3.12/site-packages/django/core/management/commands/runserver.py", line 124, in inner_run
+    autoreload.raise_last_exception()
+  File "/workspaces/projeto-att/.venv/lib/python3.12/site-packages/django/utils/autoreload.py", line 86, in raise_last_exception
+    raise _exception[1]
+  File "/workspaces/projeto-att/.venv/lib/python3.12/site-packages/django/core/management/__init__.py", line 395, in execute
+    autoreload.check_errors(django.setup)()
+  File "/workspaces/projeto-att/.venv/lib/python3.12/site-packages/django/utils/autoreload.py", line 64, in wrapper
+    fn(*args, **kwargs)
+  File "/workspaces/projeto-att/.venv/lib/python3.12/site-packages/django/__init__.py", line 24, in setup
+    apps.populate(settings.INSTALLED_APPS)
+  File "/workspaces/projeto-att/.venv/lib/python3.12/site-packages/django/apps/registry.py", line 116, in populate
+    app_config.import_models()
+  File "/workspaces/projeto-att/.venv/lib/python3.12/site-packages/django/apps/config.py", line 269, in import_models
+    self.models_module = import_module(models_module_name)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/codespace/.python/current/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 990, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1128, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1058, in source_to_code
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/workspaces/projeto-att/core/models.py", line 86
+    +    path = models.CharField(max_length=255)
+    ^
+IndentationError: expected an indented block after class definition on line 85
+/workspaces/projeto-att/core/models.py changed, reloading.
+Watching for file changes with StatReloader
+[14/Jul/2026 10:12:14] code 400, message Bad HTTP/0.9 request type ('\\x16\\x03\\x01\\x00\xf7\\x01\\x00\\x00\xf3\\x03\\x03\\x83sQ2\xfcm\\x9d2\xcf\xf5\\x92\xe5\xf6\\x11{B\xb1m\\x8aQ~\xa2\\x84')
+[14/Jul/2026 10:12:14] You're accessing the development server over HTTPS, but it only supports HTTP.
+[14/Jul/2026 10:12:14] code 400, message Bad HTTP/0.9 request type ('\\x16\\x03\\x01\\x00W\\x01\\x00\\x00S\\x03\\x03jV5\xaey')
+[14/Jul/2026 10:12:14] code 400, message Bad request version ('\xfe\xff\xfe\xfe\\x00c\\x00e\\x00\\x11\\x00r\\x00\\x13\\x00s\\x002\\x00@\\x00\xa2\\x00t\\x008\\x00j\\x00\xa3\xc0B\xc0V\xc0C\xc0W\\x00D\\x00\xbd\xc0\\x80\\x00\\x87\\x00\xc3\xc0\\x81\\x00\\x12\\x00f\\x00\\x99\\x00\\x8f\\x00\\x90\\x00\xb2\xc0\xa6\\x00\xaa\\x00\\x91\\x00\xb3\xc0\xa7\\x00\xab\xc0f\xc0l\xc0g\xc0m\xc0\\x96\xc0\\x90\xc0\\x97\xc0\\x91\xcc\\xad\\x00-\\x00\xb4\\x00\xb5\\x00\\x8e\\x00\\x14\\x00w\\x00\\x16\\x00x\\x003\\x00g\xc0\\x9e\xc0\xa2\\x00\\x9e\\x00y\\x009\\x00k\\x01\\x00\\x00\\x16\\x00')
+[14/Jul/2026 10:12:14] You're accessing the development server over HTTPS, but it only supports HTTP.
+[14/Jul/2026 10:12:14] code 400, message Bad request syntax ('\\x16\\x03\\x03\\x00\\x8c\\x01\\x00\\x00\\x88\\x03\\x03jV5\xae~b\xf1\xc5\xf3\xe6F\\x04\xf0\\x98\xf3\xb9\\x07g\xcc\\x06`#\xd5Q\\x12?\xbed0\xc0\xce\xb6\\x00\\x00\\x1a\\x13\\x05\\x13\\x04\\x13\\x01\\x13\\x02\\x13\\x03\xc0\xb4\xc0\xb5\\x00\xc7\\x00\xc6\xc0\xb2\xc0\xb0\xc0\xb3\xc0\xb1\\x01\\x00\\x00E\\x00')
+[14/Jul/2026 10:12:14] code 400, message Bad request version ('\xfe\xff\xfe\xfe\\x00c\\x00e\\x00\\x11\\x00r\\x00\\x13\\x00s\\x002\\x00@\\x00\xa2\\x00t\\x008\\x00j\\x00\xa3\xc0B\xc0V\xc0C\xc0W\\x00D\\x00\xbd\xc0\\x80\\x00\\x87\\x00\xc3\xc0\\x81\\x00\\x12\\x00f\\x00\\x99\\x00\\x8f\\x00\\x90\\x00\xb2\xc0\xa6\\x00\xaa\\x00\\x91\\x00\xb3\xc0\xa7\\x00\xab\xc0f\xc0l\xc0g\xc0m\xc0\\x96\xc0\\x90\xc0\\x97\xc0\\x91\xcc\\xad\\x00-\\x00\xb4\\x00\xb5\\x00\\x8e\\x00\\x14\\x00w\\x00\\x16\\x00x\\x003\\x00g\xc0\\x9e\xc0\xa2\\x00\\x9e\\x00y\\x009\\x00k\\x01\\x00\\x00\\x16\\x00')
+[14/Jul/2026 10:12:14] You're accessing the development server over HTTPS, but it only supports HTTP.
+[14/Jul/2026 10:12:14] code 400, message Bad request version ('\xfe\xff\xfe\xfe\\x00c\\x00e\\x00\\x11\\x00r\\x00\\x13\\x00s\\x002\\x00@\\x00\xa2\\x00t\\x008\\x00j\\x00\xa3\xc0B\xc0V\xc0C\xc0W\\x00D\\x00\xbd\xc0\\x80\\x00\\x87\\x00\xc3\xc0\\x81\\x00\\x12\\x00f\\x00\\x99\\x00\\x8f\\x00\\x90\\x00\xb2\xc0\xa6\\x00\xaa\\x00\\x91\\x00\xb3\xc0\xa7\\x00\xab\xc0f\xc0l\xc0g\xc0m\xc0\\x96\xc0\\x90\xc0\\x97\xc0\\x91\xcc\\xad\\x00-\\x00\xb4\\x00\xb5\\x00\\x8e\\x00\\x14\\x00w\\x00\\x16\\x00x\\x003\\x00g\xc0\\x9e\xc0\xa2\\x00\\x9e\\x00y\\x009\\x00k\\x01\\x00\\x006\\x00')
+[14/Jul/2026 10:12:14] You're accessing the development server over HTTPS, but it only supports HTTP.
+[14/Jul/2026 10:12:14] You're accessing the development server over HTTPS, but it only supports HTTP.
+[14/Jul/2026 10:12:14] You're accessing the development server over HTTPS, but it only supports HTTP.
+[14/Jul/2026 10:12:14] "HEAD / HTTP/1.1" 200 0
+[14/Jul/2026 10:12:14] code 400, message Bad request version ('\\x007\\x00i\\x00\xa1\xc0@\xc0T\xc0A\xc0U\\x00C\\x00\xbc\xc0~\\x00\\x86\\x00\xc2\xc0\\x7f\\x00\\x0f\\x00\\x98\\x00\\x19\\x00\\x17\\x00\\x1b\\x004\\x00l\\x00\xa6\\x00:\\x01\\x00\\x00\\x16\\x00')
+[14/Jul/2026 10:12:14] You're accessing the development server over HTTPS, but it only supports HTTP.
+[14/Jul/2026 10:12:14] code 400, message Bad request syntax ('\\x16\\x03\\x03\\x00\xe3\\x01\\x00\\x00\xdf\\x03\\x03jV5\xaeA\\x9f\\x02\xe7\xd6\xbb\\x80Y\xac\xd8\\x99\xefA\xd8N\\x03\xf5z\\x00\xcb*B\xec\xcf\xc9\\x11U')
+[14/Jul/2026 10:12:14] code 400, message Bad request version ('\\x007\\x00i\\x00\xa1\xc0@\xc0T\xc0A\xc0U\\x00C\\x00\xbc\xc0~\\x00\\x86\\x00\xc2\xc0\\x7f\\x00\\x0f\\x00\\x98\\x00\\x19\\x00\\x17\\x00\\x1b\\x004\\x00l\\x00\xa6\\x00:\\x01\\x00\\x00\\x16\\x00')
+[14/Jul/2026 10:12:14] code 400, message Bad request version ('\\x00/\\x00')
+[14/Jul/2026 10:12:14] You're accessing the development server over HTTPS, but it only supports HTTP.
+[14/Jul/2026 10:12:14] You're accessing the development server over HTTPS, but it only supports HTTP.
+[14/Jul/2026 10:12:14] You're accessing the development server over HTTPS, but it only supports HTTP.
+[14/Jul/2026 10:12:14] code 400, message Bad request version ('\xc0#\xc0\xac\xc0\xae\xc0+\xc0')
+[14/Jul/2026 10:12:14] code 400, message Bad request version ('\xc0#\xc0\xac\xc0\xae\xc0+\xc0')
+[14/Jul/2026 10:12:14] code 400, message Bad request version ('\xc0#\xc0\xac\xc0\xae\xc0+\xc0')
+[14/Jul/2026 10:12:14] You're accessing the development server over HTTPS, but it only supports HTTP.
+[14/Jul/2026 10:12:14] You're accessing the development server over HTTPS, but it only supports HTTP.
+[14/Jul/2026 10:12:14] You're accessing the development server over HTTPS, but it only supports HTTP.
+[14/Jul/2026 10:12:14] code 400, message Bad request version ('\\x00[\\x00\\\\\\x00W\xc0\\x17\\x00Z\xc0\\x18\xc0\\x19\\x01\\x00\\x00\\x16\\x00')
+[14/Jul/2026 10:12:14] code 400, message Bad request version ('\\x00[\\x00\\\\\\x00W\xc0\\x17\\x00Z\xc0\\x18\xc0\\x19\\x01\\x00\\x00\\x16\\x00')
+[14/Jul/2026 10:12:14] code 400, message Bad request version ('\\x00[\\x00\\\\\\x00W\xc0\\x17\\x00Z\xc0\\x18\xc0\\x19\\x01\\x00\\x006\\x00')
+[14/Jul/2026 10:12:14] You're accessing the development server over HTTPS, but it only supports HTTP.
+[14/Jul/2026 10:12:14] You're accessing the development server over HTTPS, but it only supports HTTP.
+[14/Jul/2026 10:12:14] You're accessing the development server over HTTPS, but it only supports HTTP.
+[14/Jul/2026 10:12:14] code 400, message Bad request version ('\\x00\\x00\xc0\xaa\xc0\xab\\x00\\x8b\\x00\\x8c\\x00\xae\xc0\xa4\xc0\xa8\\x00\xa8\\x00\\x8d\\x00\xaf\xc0\xa5\xc0\xa9\\x00\xa9\xc0d\xc0j\xc0e\xc0k\xc0\\x94\xc0\\x8e\xc0\\x95\xc0\\x8f\xcc\xab\\x00,\\x00\xb0\\x00\xb1\\x00\\x8a\\x00b\\x00a\\x00`\\x00d\\x00\\x08\\x00\\x06\\x00\\x03\\x01\\x00\\x00\\x16\\x00')
+[14/Jul/2026 10:12:14] You're accessing the development server over HTTPS, but it only supports HTTP.
+[14/Jul/2026 10:12:14] code 400, message Bad request syntax ('\\x16\\x03\\x03\\x00\xe3\\x01\\x00\\x00\xdf\\x03\\x03jV5\xae0\\x06G\xed\xa2\\x98\\x89P\xb5\xed')
+[14/Jul/2026 10:12:14] code 400, message Bad request version ('\\x00\\x00\xc0\xaa\xc0\xab\\x00\\x8b\\x00\\x8c\\x00\xae\xc0\xa4\xc0\xa8\\x00\xa8\\x00\\x8d\\x00\xaf\xc0\xa5\xc0\xa9\\x00\xa9\xc0d\xc0j\xc0e\xc0k\xc0\\x94\xc0\\x8e\xc0\\x95\xc0\\x8f\xcc\xab\\x00,\\x00\xb0\\x00\xb1\\x00\\x8a\\x00b\\x00a\\x00`\\x00d\\x00\\x08\\x00\\x06\\x00\\x03\\x01\\x00\\x00\\x16\\x00')
+[14/Jul/2026 10:12:14] You're accessing the development server over HTTPS, but it only supports HTTP.
+[14/Jul/2026 10:12:14] You're accessing the development server over HTTPS, but it only supports HTTP.
+[14/Jul/2026 10:12:14] code 400, message Bad request syntax ('\\x16\\x03\\x01\\x00\xbd\\x01\\x00\\x00\xb9\\x03\\x01jV5\xaeY\xf32:\xa4\\x04\\x82\xc9E>%|\xb6\\x96J\\x03\xaf\\x80\xb8\\x84\\x7f\xb0\\x01\xf2\xf4\\x8e\xa5E\\x00\\x00z\\x00\\x93\\x00\\x94\\x00\xb6\\x00\xac\\x00\\x95\\x00\xb7\\x00\\xad\xc0h\xc0n\xc0i\xc0o\xc0\\x98\xc0\\x92\xc0\\x99\xc0\\x93\xcc\xae\\x00.\\x00\xb8\\x00\xb9\\x00\\x92\\x00|\\x00')
+[14/Jul/2026 10:12:14] code 400, message Bad HTTP/0.9 request type ('\\x16\\x03\\x02\\x00\xbd\\x01\\x00\\x00\xb9\\x03\\x02jV5\xae7\xc6z#\\x98_mt\xc8`\\x07\\x15\xfeo:\xfd\xc0i\\x92')
+[14/Jul/2026 10:12:14] You're accessing the development server over HTTPS, but it only supports HTTP.
+[14/Jul/2026 10:12:14] You're accessing the development server over HTTPS, but it only supports HTTP.
+[14/Jul/2026 10:12:14] code 400, message Bad request syntax ('\\x16\\x03\\x03\\x00\xdd\\x01\\x00\\x00\xd9\\x03\\x03jV5\xae\xd8%\xfa\\x15[\xa2\\x00\xe9\xfa\xb4c\\x11"^:dw\\\\\\'[\xd7@>\xd5\xdf\xe4\\x19T\\x00\\x00z\\x00\\x93\\x00\\x94\\x00\xb6\\x00\xac\\x00\\x95\\x00\xb7\\x00\\xad\xc0h\xc0n\xc0i\xc0o\xc0\\x98\xc0\\x92\xc0\\x99\xc0\\x93\xcc\xae\\x00.\\x00\xb8\\x00\xb9\\x00\\x92\\x00|\\x00')
+[14/Jul/2026 10:12:14] You're accessing the development server over HTTPS, but it only supports HTTP.
+[14/Jul/2026 10:12:19] code 400, message Bad request version ('\xfe\xff\xfe\xfe\\x00c\\x00e\\x00\\x11\\x00r\\x00\\x13\\x00s\\x002\\x00@\\x00\xa2\\x00t\\x008\\x00j\\x00\xa3\xc0B\xc0V\xc0C\xc0W\\x00D\\x00\xbd\xc0\\x80\\x00\\x87\\x00\xc3\xc0\\x81\\x00\\x12\\x00f\\x00\\x99\\x00\\x8f\\x00\\x90\\x00\xb2\xc0\xa6\\x00\xaa\\x00\\x91\\x00\xb3\xc0\xa7\\x00\xab\xc0f\xc0l\xc0g\xc0m\xc0\\x96\xc0\\x90\xc0\\x97\xc0\\x91\xcc\\xad\\x00-\\x00\xb4\\x00\xb5\\x00\\x8e\\x00\\x14\\x00w\\x00\\x16\\x00x\\x003\\x00g\xc0\\x9e\xc0\xa2\\x00\\x9e\\x00y\\x009\\x00k\\x01\\x00')
+[14/Jul/2026 10:12:19] You're accessing the development server over HTTPS, but it only supports HTTP.
+[14/Jul/2026 10:12:24] code 400, message Bad request version ('\\x007\\x00i\\x00\xa1\xc0@\xc0T\xc0A\xc0U\\x00C\\x00\xbc\xc0~\\x00\\x86\\x00\xc2\xc0\\x7f\\x00\\x0f\\x00\\x98\\x00\\x19\\x00\\x17\\x00\\x1b\\x004\\x00l\\x00\xa6\\x00:\\x01\\x00')
+[14/Jul/2026 10:12:24] You're accessing the development server over HTTPS, but it only supports HTTP.
+[14/Jul/2026 10:12:24] code 400, message Bad request version ('\xc0#\xc0\xac\xc0\xae\xc0+\xc0')
+[14/Jul/2026 10:12:24] You're accessing the development server over HTTPS, but it only supports HTTP.
+[14/Jul/2026 10:12:29] code 400, message Bad request version ('\\x00[\\x00\\\\\\x00W\xc0\\x17\\x00Z\xc0\\x18\xc0\\x19\\x01\\x00')
+[14/Jul/2026 10:12:29] You're accessing the development server over HTTPS, but it only supports HTTP.
+[14/Jul/2026 10:12:34] code 400, message Bad request version ('\\x00\\x00\xc0\xaa\xc0\xab\\x00\\x8b\\x00\\x8c\\x00\xae\xc0\xa4\xc0\xa8\\x00\xa8\\x00\\x8d\\x00\xaf\xc0\xa5\xc0\xa9\\x00\xa9\xc0d\xc0j\xc0e\xc0k\xc0\\x94\xc0\\x8e\xc0\\x95\xc0\\x8f\xcc\xab\\x00,\\x00\xb0\\x00\xb1\\x00\\x8a\\x00b\\x00a\\x00`\\x00d\\x00\\x08\\x00\\x06\\x00\\x03\\x01\\x00')
+[14/Jul/2026 10:12:34] You're accessing the development server over HTTPS, but it only supports HTTP.
+[14/Jul/2026 10:12:34] code 400, message Bad HTTP/0.9 request type ('\\x16\\x03\\x00\\x00\xa5\\x01\\x00\\x00\xa1\\x03\\x00jV5\xc2\xe6\xac\xde\\x19Y\\x0f\xdd\\x9c\\x87I\xf3\xb5\xc6\xb3\\x9b\xaf\xa6j\\x98(m\xab')
+[14/Jul/2026 10:12:34] You're accessing the development server over HTTPS, but it only supports HTTP.
+/workspaces/projeto-att/core/views.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+July 14, 2026 - 10:11:04
+Django version 6.0.5, using settings 'tcc.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CONTROL-C.
+
+WARNING: This is a development server. Do not use it in a production setting. Use a production WSGI or ASGI server instead.
+For more information on production servers see: https://docs.djangoproject.com/en/6.0/howto/deployment/
+Watching for file changes with StatReloader
+/workspaces/projeto-att/core/views.py changed, reloading.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+July 14, 2026 - 10:14:31
+Django version 6.0.5, using settings 'tcc.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CONTROL-C.
+
+WARNING: This is a development server. Do not use it in a production setting. Use a production WSGI or ASGI server instead.
+For more information on production servers see: https://docs.djangoproject.com/en/6.0/howto/deployment/
+Watching for file changes with StatReloader
