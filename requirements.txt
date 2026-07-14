@@ -56,8 +56,6 @@ nbclient==0.10.4
 nbconvert==7.17.0
 nbdime==4.0.4
 nbformat==5.10.4
-nested-asyncio==1.6.0
-nested-asyncio==1.6.0
 nest-asyncio==1.6.0
 notebook_shim==0.2.4
 packaging==26.0
